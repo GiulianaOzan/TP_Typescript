@@ -69,6 +69,14 @@
     <div id="loaderContainer">
       <span class="loader"></span>
     </div>
+
+    <!---Texto-->
+
+    <div class="mb-3">
+      <label for="searchInput" class="form-label">Search</label>
+      <input type="search" class="form-control" id="searchInput" onkeyup="filterProducts(this.value)">
+    </div>
+
     <div id="TableContainer">
         <table class="table table-bordered" id="tableElement"></table>
     </div>

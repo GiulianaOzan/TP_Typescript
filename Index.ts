@@ -13,6 +13,14 @@ type Product ={
     rating: Rating;
 };
 
+//Global variables
+let allProducts: Product[] = [];
+
+//Handlers
+function filterProducts(value:String){
+const filteredProducts:Product[] = allProducts.filter(p: Product) => p.title.toLowerCase().includes(value.toLowerCase())|| p.description.toLowerCase().includes(value.toLowerCase());
+console.log('filteredProducts', filteredProducts);
+}
 fetch('https://fakestoreapi.com/products')
 .then(res => res.json())
 .then((products:Product[])=>{
