@@ -1,6 +1,7 @@
 fetch('https://fakestoreapi.com/products')
     .then(function (res) { return res.json(); })
     .then(function (products) {
+        allProducts = products;
     //prepare HTML Table
     var tableHtml = '<thead><tr><th>ID</th><th>Title</th><th>Description</th><th>Price</th></tr></thead><tbody></tbody>';
     //loop thru all products to generate rows on the table 
