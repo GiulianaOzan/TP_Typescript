@@ -1,7 +1,14 @@
+//Global variables
+var allProducts = [];
+//Handlers
+function filterProducts(value) {
+    var filteredProducts = allProducts.filter(function (p) { return p.title.toLowerCase().includes(value.toLowerCase()) || p.description.toLowerCase().includes(value.toLowerCase()); });
+    console.log('filteredProducts', filteredProducts);
+}
 fetch('https://fakestoreapi.com/products')
     .then(function (res) { return res.json(); })
     .then(function (products) {
-        allProducts = products;
+    allProducts = products;
     //prepare HTML Table
     var tableHtml = '<thead><tr><th>ID</th><th>Title</th><th>Description</th><th>Price</th></tr></thead><tbody></tbody>';
     //loop thru all products to generate rows on the table 

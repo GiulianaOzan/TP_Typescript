@@ -17,7 +17,7 @@ type Product ={
 let allProducts: Product[] = [];
 
 //Handlers
-function filterProducts(value: String){
+function filterProducts(value:string){
     const filteredProducts: Product[] = allProducts.filter((p: Product) => p.title.toLowerCase().includes(value.toLowerCase()) || p.description.toLowerCase().includes(value.toLowerCase()));
     console.log('filteredProducts', filteredProducts);
 }
