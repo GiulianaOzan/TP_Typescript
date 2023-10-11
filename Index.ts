@@ -17,13 +17,16 @@ type Product ={
 let allProducts: Product[] = [];
 
 //Handlers
-function filterProducts(value:String){
+function filterProducts(value: String){
 const filteredProducts:Product[] = allProducts.filter(p: Product) => p.title.toLowerCase().includes(value.toLowerCase())|| p.description.toLowerCase().includes(value.toLowerCase());
 console.log('filteredProducts', filteredProducts);
 }
+
+
 fetch('https://fakestoreapi.com/products')
 .then(res => res.json())
 .then((products:Product[])=>{
+    allProducts = products;
     //prepare HTML Table
     let tableHtml: string = '<thead><tr><th>ID</th><th>Title</th><th>Description</th><th>Price</th></tr></thead><tbody></tbody>';
     //loop thru all products to generate rows on the table 
